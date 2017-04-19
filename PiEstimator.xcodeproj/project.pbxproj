@@ -13,6 +13,10 @@
 		521F1C821EA7F44000EE0920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521F1C801EA7F44000EE0920 /* Main.storyboard */; };
 		521F1C8D1EA7F44000EE0920 /* PiEstimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1C8C1EA7F44000EE0920 /* PiEstimatorTests.swift */; };
 		521F1C981EA7F44000EE0920 /* PiEstimatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1C971EA7F44000EE0920 /* PiEstimatorUITests.swift */; };
+		521F1CA61EA7F46500EE0920 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1CA51EA7F46500EE0920 /* RandomNumberGenerator.swift */; };
+		521F1CA81EA7F48F00EE0920 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1CA71EA7F48F00EE0920 /* Math.swift */; };
+		521F1CAA1EA7F8E700EE0920 /* PiEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1CA91EA7F8E700EE0920 /* PiEstimator.swift */; };
+		529D0A071EA7FE02001FB960 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529D0A061EA7FE02001FB960 /* Async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		521F1C931EA7F44000EE0920 /* PiEstimatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiEstimatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		521F1C971EA7F44000EE0920 /* PiEstimatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiEstimatorUITests.swift; sourceTree = "<group>"; };
 		521F1C991EA7F44000EE0920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521F1CA51EA7F46500EE0920 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
+		521F1CA71EA7F48F00EE0920 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		521F1CA91EA7F8E700EE0920 /* PiEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiEstimator.swift; sourceTree = "<group>"; };
+		529D0A061EA7FE02001FB960 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 				521F1C7E1EA7F44000EE0920 /* Assets.xcassets */,
 				521F1C801EA7F44000EE0920 /* Main.storyboard */,
 				521F1C831EA7F44000EE0920 /* Info.plist */,
+				521F1CA51EA7F46500EE0920 /* RandomNumberGenerator.swift */,
+				521F1CA71EA7F48F00EE0920 /* Math.swift */,
+				521F1CA91EA7F8E700EE0920 /* PiEstimator.swift */,
+				529D0A061EA7FE02001FB960 /* Async.swift */,
 			);
 			path = PiEstimator;
 			sourceTree = "<group>";
@@ -256,7 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				521F1C7D1EA7F44000EE0920 /* ViewController.swift in Sources */,
+				521F1CA81EA7F48F00EE0920 /* Math.swift in Sources */,
 				521F1C7B1EA7F44000EE0920 /* AppDelegate.swift in Sources */,
+				521F1CA61EA7F46500EE0920 /* RandomNumberGenerator.swift in Sources */,
+				529D0A071EA7FE02001FB960 /* Async.swift in Sources */,
+				521F1CAA1EA7F8E700EE0920 /* PiEstimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +514,7 @@
 				521F1C9E1EA7F44000EE0920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		521F1C9F1EA7F44000EE0920 /* Build configuration list for PBXNativeTarget "PiEstimatorTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +523,7 @@
 				521F1CA11EA7F44000EE0920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		521F1CA21EA7F44000EE0920 /* Build configuration list for PBXNativeTarget "PiEstimatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +532,7 @@
 				521F1CA41EA7F44000EE0920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
