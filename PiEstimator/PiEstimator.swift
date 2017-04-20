@@ -40,12 +40,14 @@ class Counter {
     
 }
 
-protocol EstimatorDelegate {
+public protocol EstimatorDelegate {
     
     func progressBarWasUpticked(percentDone: Double)
     func numberOfPairsWasUpdated(coprimes: Int, composites: Int)
     func ratioWasUpdated(ratio: Double)
     func estimateOfPiWasMade(π: Double)
+ 
+    var killSwitch: PiEstimator.KillSwitch { get }
     
 }
 
@@ -74,15 +76,20 @@ class TerminalHandler: EstimatorDelegate {
         print("Estimate of π: \(π)")
 
     }
+    
+    var killSwitch = PiEstimator.KillSwitch.off
 
 }
 
-class PiEstimator {
+public class PiEstimator {
 
     public var delegate: EstimatorDelegate?
     public var dieCastUpperBound = Int(Int32.max)
     public var iterations = 1000
 
+    /// Works as a kill switch. If it is on, the PiEstimator will stop on the next loop.
+    public enum KillSwitch { case on; case off }
+    
     private var progressBarUpdateFrequency: Int { return iterations / 1000 }
     
     private class Timer {
@@ -118,6 +125,8 @@ class PiEstimator {
             let dataUpdateTimer = Timer()
             
             for i in 1...self.iterations {
+                
+                if self.delegate?.killSwitch == .on { break }
                 
                 // Roll the two “dice”
                 let m = generateRandomInt(lessThan: self.dieCastUpperBound) + 1

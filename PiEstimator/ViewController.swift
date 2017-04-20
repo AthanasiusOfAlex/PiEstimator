@@ -34,6 +34,7 @@ extension ViewController: EstimatorDelegate {
         self.estimateOfPi.doubleValue = π
         
     }
+    
 
 }
 
@@ -56,8 +57,14 @@ class ViewController: NSViewController {
         
         self.progressBar.doubleValue = 0.0
         updatePiEstimator()
+        killSwitch = .off
         piEstimator.run()
 
+    }
+    
+    @IBAction func stopSimulation(_ sender: NSButton) {
+    
+        killSwitch = .on
     }
     
     @IBAction func quit(_ sender: NSButton) {
@@ -67,6 +74,9 @@ class ViewController: NSViewController {
     }
     
     private let piEstimator = PiEstimator()
+    
+    public var killSwitch = PiEstimator.KillSwitch.off
+
     
     func updatePiEstimator() {
         
