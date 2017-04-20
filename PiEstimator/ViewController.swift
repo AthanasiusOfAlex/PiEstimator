@@ -48,9 +48,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var coprimePairs: NSTextField!
     @IBOutlet weak var calculating: NSTextField!
     
+    @IBAction func upperBoundDidUpdate(_ sender: Any) {
+    }
+    @IBAction func iterationsDidUpdate(_ sender: Any) {
+    }
     @IBAction func runSimulation(_ sender: NSButton) {
         
         self.progressBar.doubleValue = 0.0
+        updatePiEstimator()
         piEstimator.run()
 
     }
@@ -61,19 +66,32 @@ class ViewController: NSViewController {
     
     }
     
-    @IBAction func updateUpperBound(_ sender: NSTextField) {
-    
-        piEstimator.dieCastUpperBound = self.dieCastUpperBound.integerValue
-        
-    }
-    
-    @IBAction func updateIterations(_ sender: NSTextField) {
-        
-        piEstimator.iterations = self.numberOfInterations.integerValue
-        
-    }
-    
     private let piEstimator = PiEstimator()
+    
+    func updatePiEstimator() {
+        
+        let upperBoundString = self.dieCastUpperBound.stringValue
+        let iterationsString = self.numberOfInterations.stringValue
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        let upperBound = Int(formatter.number(from: upperBoundString) ?? 1)
+        let iterations = Int(formatter.number(from: iterationsString) ?? 1)
+
+        piEstimator.dieCastUpperBound = upperBound
+        piEstimator.iterations = iterations
+        
+        readValuesFromPiEstimator()
+        
+    }
+    
+    func readValuesFromPiEstimator() {
+        
+        self.dieCastUpperBound.integerValue = piEstimator.dieCastUpperBound
+        self.numberOfInterations.integerValue = piEstimator.iterations
+        
+    }
     
     override func viewDidLoad() {
         
@@ -82,8 +100,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         piEstimator.delegate = self
-        self.dieCastUpperBound.integerValue = piEstimator.dieCastUpperBound
-        self.numberOfInterations.integerValue = piEstimator.iterations
+        readValuesFromPiEstimator()
         self.progressBar.doubleValue = 0.0
         
     }
@@ -94,6 +111,4 @@ class ViewController: NSViewController {
         }
     }
 
-
 }
-

@@ -683,15 +683,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="PiEstimator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="298"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="b09-rO-vWa">
-                                <rect key="frame" x="100" y="172" width="322" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJh-Zb-7BQ">
-                                <rect key="frame" x="98" y="199" width="83" height="17"/>
+                                <rect key="frame" x="18" y="204" width="83" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Calculating…" id="YdK-yf-lDM">
                                     <font key="font" metaFont="system"/>
@@ -700,7 +696,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-i4-PG9">
-                                <rect key="frame" x="98" y="136" width="93" height="17"/>
+                                <rect key="frame" x="18" y="145" width="93" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Coprime pairs:" id="V0n-Ps-bKF">
                                     <font key="font" metaFont="system"/>
@@ -709,7 +705,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yW9-3g-0rT">
-                                <rect key="frame" x="98" y="224" width="181" height="17"/>
+                                <rect key="frame" x="18" y="236" width="181" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Number of iterations desired:" id="ACi-RG-aAZ">
                                     <font key="font" metaFont="system"/>
@@ -718,7 +714,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-oV-sDd">
-                                <rect key="frame" x="272" y="136" width="139" height="17"/>
+                                <rect key="frame" x="214" y="145" width="248" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="24q-0Q-GwO">
                                     <font key="font" metaFont="system"/>
@@ -727,7 +723,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8L-Zh-8rn">
-                                <rect key="frame" x="272" y="111" width="139" height="17"/>
+                                <rect key="frame" x="214" y="120" width="248" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="yd8-wg-tNE">
                                     <font key="font" metaFont="system"/>
@@ -736,7 +732,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLc-57-Dzz">
-                                <rect key="frame" x="272" y="86" width="139" height="17"/>
+                                <rect key="frame" x="214" y="95" width="248" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="6zk-2k-Tz4">
                                     <font key="font" metaFont="system"/>
@@ -745,7 +741,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiM-cT-bzA">
-                                <rect key="frame" x="272" y="61" width="139" height="17"/>
+                                <rect key="frame" x="214" y="70" width="248" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="98Y-A6-lvF">
                                     <font key="font" metaFont="system"/>
@@ -754,7 +750,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvz-lc-eJy">
-                                <rect key="frame" x="98" y="111" width="107" height="17"/>
+                                <rect key="frame" x="18" y="120" width="107" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Composite pairs:" id="inm-ZJ-KEv">
                                     <font key="font" metaFont="system"/>
@@ -763,7 +759,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoN-bh-K12">
-                                <rect key="frame" x="98" y="86" width="161" height="17"/>
+                                <rect key="frame" x="18" y="95" width="161" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ratio of coprimes to total:" id="BZq-RJ-lmE">
                                     <font key="font" metaFont="system"/>
@@ -772,7 +768,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnU-d0-53V">
-                                <rect key="frame" x="98" y="61" width="89" height="17"/>
+                                <rect key="frame" x="18" y="70" width="89" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Estimate of π:" id="0Wv-Xg-cnq">
                                     <font key="font" metaFont="system"/>
@@ -781,7 +777,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXF-ld-ahK">
-                                <rect key="frame" x="326" y="221" width="96" height="22"/>
+                                <rect key="frame" x="216" y="231" width="244" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SEU-hF-zBh">
                                     <font key="font" metaFont="system"/>
@@ -789,11 +785,11 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="updateIterations:" target="XfG-lQ-9wD" id="XEt-fO-44m"/>
+                                    <action selector="iterationsDidUpdate:" target="XfG-lQ-9wD" id="rDl-UR-3JJ"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pco-Lo-gS0">
-                                <rect key="frame" x="98" y="244" width="142" height="17"/>
+                                <rect key="frame" x="18" y="261" width="142" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Upper limit of die cast:" id="rXF-c3-YdR">
                                     <font key="font" metaFont="system"/>
@@ -802,7 +798,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRE-Eg-Pf2">
-                                <rect key="frame" x="326" y="241" width="96" height="22"/>
+                                <rect key="frame" x="216" y="258" width="244" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="iRT-Oy-wet">
                                     <font key="font" metaFont="system"/>
@@ -810,11 +806,11 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="updateUpperBound:" target="XfG-lQ-9wD" id="9JC-T5-wzX"/>
+                                    <action selector="upperBoundDidUpdate:" target="XfG-lQ-9wD" id="LH4-Ha-V8r"/>
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BwI-dM-7QT">
-                                <rect key="frame" x="60" y="13" width="129" height="32"/>
+                                <rect key="frame" x="14" y="21" width="129" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Run simulation" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WIr-Tr-kSp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -825,7 +821,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-Kd-KSs">
-                                <rect key="frame" x="210" y="13" width="66" height="32"/>
+                                <rect key="frame" x="400" y="21" width="66" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="73U-hM-Ibf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -835,6 +831,10 @@
                                     <action selector="quit:" target="XfG-lQ-9wD" id="xgW-qt-jM4"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="b09-rO-vWa">
+                                <rect key="frame" x="20" y="177" width="440" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
                         </subviews>
                     </view>
                     <connections>
@@ -850,7 +850,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="669"/>
         </scene>
     </scenes>
 </document>
