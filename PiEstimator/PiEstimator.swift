@@ -31,12 +31,19 @@ class Counter {
         
     }
     
+    func reset() {
+        
+        coprimes_ = 0
+        composites_ = 0
+        
+    }
+    
 }
 
 protocol EstimatorDelegate {
     
     func progressBarWasUpticked(percentDone: Double)
-    func numberPairsWereUpdated(coprimes: Int, composites: Int)
+    func numberOfPairsWasUpdated(coprimes: Int, composites: Int)
     func ratioWasUpdated(ratio: Double)
     func estimateOfPiWasMade(π: Double)
     
@@ -50,7 +57,7 @@ class TerminalHandler: EstimatorDelegate {
         
     }
     
-    func numberPairsWereUpdated(coprimes: Int, composites: Int) {
+    func numberOfPairsWasUpdated(coprimes: Int, composites: Int) {
 
         print("Coprime pairs: \(coprimes); Composite pairs: \(composites)")
 
@@ -76,7 +83,6 @@ class PiEstimator {
     public var dieCastUpperBound = Int(Int32.max)
     public var iterations = 1000
 
-    private let counter = Counter()
     private var progressBarUpdateFrequency: Int { return iterations / 1000 }
     
     private class Timer {
@@ -107,6 +113,7 @@ class PiEstimator {
         
         Async.background {
             
+            let counter = Counter()
             let progressBarTimer = Timer()
             let dataUpdateTimer = Timer()
             
@@ -117,9 +124,9 @@ class PiEstimator {
                 let n = generateRandomInt(lessThan: self.dieCastUpperBound) + 1
                 
                 // Uptick the counter
-                self.counter.uptickBasedOnNubers(m, and: n)
+                counter.uptickBasedOnNubers(m, and: n)
                 
-                if progressBarTimer.elapsedTime >= 250000000 || i==self.iterations {
+                if progressBarTimer.elapsedTime >= 250000000 || i==1 || i==self.iterations {
                     
                     Async.main {
                         
@@ -130,17 +137,17 @@ class PiEstimator {
                     
                 }
                 
-                if dataUpdateTimer.elapsedTime >= 500000000 || i==self.iterations {
+                if dataUpdateTimer.elapsedTime >= 500000000 || i==1 || i==self.iterations {
                     
                     dataUpdateTimer.reset()
                     
                     Async.main {
 
-                        self.delegate?.numberPairsWereUpdated(coprimes: self.counter.coprimes,
-                                                              composites: self.counter.composites)
+                        self.delegate?.numberOfPairsWasUpdated(coprimes: counter.coprimes,
+                                                              composites: counter.composites)
                         
-                        let totalSoFar = self.counter.coprimes + self.counter.composites
-                        let ratio = Double(self.counter.coprimes) / Double(totalSoFar)
+                        let totalSoFar = counter.coprimes + counter.composites
+                        let ratio = Double(counter.coprimes) / Double(totalSoFar)
                         self.delegate?.ratioWasUpdated(ratio: ratio)
                         
                         let π = sqrt(6 / ratio)
