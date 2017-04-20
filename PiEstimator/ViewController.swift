@@ -56,7 +56,7 @@ class ViewController: NSViewController {
 
         let piEstimator = PiEstimator()
         piEstimator.delegate = self
-
+        
         piEstimator.run()
         
     }
