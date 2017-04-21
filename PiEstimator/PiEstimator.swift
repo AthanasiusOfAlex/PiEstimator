@@ -15,8 +15,10 @@ class Counter {
     private var coprimes_ = 0
     private var composites_ = 0
     
+    
     var coprimes: Int { return coprimes_ }
     var composites: Int { return composites_ }
+    var total: Int { return coprimes_ + composites_ }
     
     func uptickBasedOnNubers(_ m: Int, and n: Int) {
         
@@ -40,18 +42,28 @@ class Counter {
     
 }
 
-public protocol EstimatorDelegate {
+public protocol PiEstimatorDelegate: class {
     
+    func simulationHasBegun()
     func progressBarWasUpticked(percentDone: Double)
     func numberOfPairsWasUpdated(coprimes: Int, composites: Int)
     func ratioWasUpdated(ratio: Double)
     func estimateOfPiWasMade(π: Double)
- 
-    var killSwitch: PiEstimator.KillSwitch { get }
+    func killSwitchWasTurnedOn()
+    func simulationHasTerminated()
+    
+    var killSwitch: PiEstimator.KillSwitch { get set }
+    var piEstimatorLock: PiEstimator.Lock { get set }
     
 }
 
-class TerminalHandler: EstimatorDelegate {
+class TerminalHandler: PiEstimatorDelegate {
+    
+    func simulationHasBegun() {
+    
+        piEstimatorLock = .locked
+        
+    }
     
     func progressBarWasUpticked(percentDone: Double) {
         
@@ -77,20 +89,37 @@ class TerminalHandler: EstimatorDelegate {
 
     }
     
-    var killSwitch = PiEstimator.KillSwitch.off
+    func killSwitchWasTurnedOn() {
+        
+        killSwitch = .dontKill
+        
+    }
+    
+    func simulationHasTerminated() {
+    
+        piEstimatorLock = .unlocked
+        
+    }
+    
+    var killSwitch = PiEstimator.KillSwitch.dontKill
+    var piEstimatorLock = PiEstimator.Lock.unlocked
 
 }
 
 public class PiEstimator {
 
-    public var delegate: EstimatorDelegate?
+    weak public var delegate: PiEstimatorDelegate?
     public var dieCastUpperBound = Int(Int32.max)
     public var iterations = 1000
 
     /// Works as a kill switch. If it is on, the PiEstimator will stop on the next loop.
-    public enum KillSwitch { case on; case off }
+    public enum KillSwitch { case kill; case dontKill }
+    
+    /// Works as a lock. As long as it is on, the estimator should never be activated.
+    public enum Lock { case locked; case unlocked }
     
     private var progressBarUpdateFrequency: Int { return iterations / 1000 }
+    private var counter = Counter()
     
     private class Timer {
         
@@ -118,15 +147,28 @@ public class PiEstimator {
     
     func run() {
         
+        // Refuse to run if the lock is locked.
+        if delegate?.piEstimatorLock == PiEstimator.Lock.locked { return }
+        
         Async.background {
             
-            let counter = Counter()
+            // The simulation has begun. This is a good moment to lock the estimator.
+            self.delegate?.simulationHasBegun()
+            
+            let counter = self.counter
             let progressBarTimer = Timer()
             let dataUpdateTimer = Timer()
             
-            for i in 1...self.iterations {
+            if counter.total >= self.iterations { counter.reset() }
+            
+            for i in counter.total + 1...self.iterations {
                 
-                if self.delegate?.killSwitch == .on { break }
+                if self.delegate?.killSwitch == .kill {
+                    
+                    self.delegate?.killSwitchWasTurnedOn()
+                    break
+                    
+                }
                 
                 // Roll the two “dice”
                 let m = generateRandomInt(lessThan: self.dieCastUpperBound) + 1
@@ -155,7 +197,7 @@ public class PiEstimator {
                         self.delegate?.numberOfPairsWasUpdated(coprimes: counter.coprimes,
                                                               composites: counter.composites)
                         
-                        let totalSoFar = counter.coprimes + counter.composites
+                        let totalSoFar = counter.total
                         let ratio = Double(counter.coprimes) / Double(totalSoFar)
                         self.delegate?.ratioWasUpdated(ratio: ratio)
                         
@@ -167,6 +209,9 @@ public class PiEstimator {
                 }
                 
             }
+            
+            // The simulation has terminated. This is a good place to unlock the estimator.
+            self.delegate?.simulationHasTerminated()
             
         }
         

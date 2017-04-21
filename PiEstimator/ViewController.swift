@@ -8,8 +8,14 @@
 
 import Cocoa
 
-extension ViewController: EstimatorDelegate {
+extension ViewController: PiEstimatorDelegate {
     
+    func simulationHasBegun() {
+        
+        piEstimatorLock = .locked
+        
+    }
+
     func progressBarWasUpticked(percentDone: Double) {
         
         self.progressBar.doubleValue = percentDone * 100
@@ -35,6 +41,18 @@ extension ViewController: EstimatorDelegate {
         
     }
     
+    func killSwitchWasTurnedOn() {
+        
+        killSwitch = .dontKill
+        
+    }
+    
+    func simulationHasTerminated() {
+    
+        piEstimatorLock = .unlocked
+        
+    }
+
 
 }
 
@@ -55,16 +73,17 @@ class ViewController: NSViewController {
     }
     @IBAction func runSimulation(_ sender: NSButton) {
         
-        self.progressBar.doubleValue = 0.0
+        //self.progressBar.doubleValue = 0.0
         updatePiEstimator()
-        killSwitch = .off
+        killSwitch = .dontKill
         piEstimator.run()
 
     }
     
     @IBAction func stopSimulation(_ sender: NSButton) {
     
-        killSwitch = .on
+        killSwitch = .kill
+        
     }
     
     @IBAction func quit(_ sender: NSButton) {
@@ -73,9 +92,10 @@ class ViewController: NSViewController {
     
     }
     
-    private let piEstimator = PiEstimator()
+    private var piEstimator = PiEstimator()
     
-    public var killSwitch = PiEstimator.KillSwitch.off
+    public var killSwitch = PiEstimator.KillSwitch.dontKill
+    public var piEstimatorLock = PiEstimator.Lock.unlocked
 
     
     func updatePiEstimator() {
