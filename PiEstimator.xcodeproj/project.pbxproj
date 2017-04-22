@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521B8FFE1EAAA3DC00DCFB9E /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521B8FFC1EAAA3DC00DCFB9E /* LICENSE.txt */; };
 		521F1C7B1EA7F44000EE0920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1C7A1EA7F44000EE0920 /* AppDelegate.swift */; };
 		521F1C7D1EA7F44000EE0920 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F1C7C1EA7F44000EE0920 /* ViewController.swift */; };
 		521F1C7F1EA7F44000EE0920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521F1C7E1EA7F44000EE0920 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521B8FFC1EAAA3DC00DCFB9E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		521F1C771EA7F44000EE0920 /* PiEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521F1C7A1EA7F44000EE0920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521F1C7C1EA7F44000EE0920 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		521F1C6E1EA7F44000EE0920 = {
 			isa = PBXGroup;
 			children = (
+				521B8FFC1EAAA3DC00DCFB9E /* LICENSE.txt */,
 				521F1C791EA7F44000EE0920 /* PiEstimator */,
 				521F1C8B1EA7F44000EE0920 /* PiEstimatorTests */,
 				521F1C961EA7F44000EE0920 /* PiEstimatorUITests */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521B8FFE1EAAA3DC00DCFB9E /* LICENSE.txt in Resources */,
 				521F1C7F1EA7F44000EE0920 /* Assets.xcassets in Resources */,
 				521F1C821EA7F44000EE0920 /* Main.storyboard in Resources */,
 			);
