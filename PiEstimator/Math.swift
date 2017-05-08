@@ -1,5 +1,5 @@
 //
-//  MathFunctions.swift
+//  Math.swift
 //  PiEstimator
 //
 //  Created by Louis Melahn on 4/19/17.
